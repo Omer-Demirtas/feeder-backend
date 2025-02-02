@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 /**
@@ -13,7 +14,7 @@ import java.time.LocalTime;
 
 @Getter
 @Setter
-public class FeedingScheduleDTO {
+public class FeedingScheduleDTO implements Serializable {
     private long id;
     private LocalTime time;
 

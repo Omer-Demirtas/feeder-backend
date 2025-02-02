@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface FeedingScheduleService {
     List<FeedingScheduleDTO> getFeedingSchedules();
+
+    Long save(FeedingScheduleDTO feedingScheduleDTO);
 }
