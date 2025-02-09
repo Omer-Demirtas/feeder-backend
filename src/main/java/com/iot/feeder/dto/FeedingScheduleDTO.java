@@ -1,5 +1,6 @@
 package com.iot.feeder.dto;
 
+import com.iot.feeder.entity.DeviceConfig;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,9 +15,12 @@ import java.time.LocalTime;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class FeedingScheduleDTO implements Serializable {
     private long id;
     private LocalTime time;
+
+    private DeviceConfig deviceConfig;
 
     public FeedingScheduleDTO(long id, LocalTime time) {
         this.id = id;

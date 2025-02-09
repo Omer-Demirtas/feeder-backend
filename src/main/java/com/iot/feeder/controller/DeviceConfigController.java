@@ -1,6 +1,7 @@
 package com.iot.feeder.controller;
 
 import com.iot.feeder.dto.DeviceConfigDTO;
+import com.iot.feeder.dto.request.DeviceConfigSaveDTO;
 import com.iot.feeder.service.DeviceConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class DeviceConfigController {
     }
 
     @PostMapping
-    public DeviceConfigDTO saveDeviceConfig(@RequestBody DeviceConfigDTO deviceConfigDTO) {
+    public DeviceConfigDTO saveDeviceConfig(@RequestBody DeviceConfigSaveDTO deviceConfigDTO) {
         return deviceConfigService.save(deviceConfigDTO);
     }
 }

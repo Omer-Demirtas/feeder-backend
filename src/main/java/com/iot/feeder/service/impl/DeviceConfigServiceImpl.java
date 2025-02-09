@@ -1,6 +1,7 @@
 package com.iot.feeder.service.impl;
 
 import com.iot.feeder.dto.DeviceConfigDTO;
+import com.iot.feeder.dto.request.DeviceConfigSaveDTO;
 import com.iot.feeder.mapper.DeviceConfigMapper;
 import com.iot.feeder.repository.DeviceConfigRepository;
 import com.iot.feeder.service.DeviceConfigService;
@@ -33,10 +34,10 @@ public class DeviceConfigServiceImpl implements DeviceConfigService {
     }
 
     @Override
-    public DeviceConfigDTO save(DeviceConfigDTO deviceConfigDTO) {
+    public DeviceConfigDTO save(DeviceConfigSaveDTO deviceConfigSaveDTO) {
         return deviceConfigMapper.toDTO(
                 deviceConfigRepository.save(
-                        deviceConfigMapper.toEntity(deviceConfigDTO)
+                        deviceConfigMapper.toEntity(deviceConfigSaveDTO)
                 )
         );
     }
