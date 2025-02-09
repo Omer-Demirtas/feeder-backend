@@ -1,11 +1,11 @@
 package com.iot.feeder.dto;
 
-import com.iot.feeder.entity.FeedingSchedule;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -23,7 +23,9 @@ public class DeviceConfigDTO implements Serializable {
 
     private String deviceName;
 
-    private LocalDateTime lastUpdatedDate;
+    private List<FeedingScheduleDTO> feedingSchedules;
 
-    private List<FeedingSchedule> feedingSchedules;
+    private LocalDateTime createdDate;
+
+    private LocalDateTime lastUpdatedDate;
 }

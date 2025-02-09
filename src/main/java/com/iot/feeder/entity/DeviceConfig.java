@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -19,7 +21,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "DEVICE_CONFIG")
-public class DeviceConfig implements Serializable {
+public class DeviceConfig extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,5 +31,9 @@ public class DeviceConfig implements Serializable {
     @OneToMany(mappedBy = "deviceConfig", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<FeedingSchedule> feedingSchedules;
 
-    private LocalDateTime lastUpdatedDate = LocalDateTime.now();
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime lastUpdatedDate;
 }
