@@ -2,6 +2,7 @@ package com.iot.feeder.repository;
 
 import com.iot.feeder.entity.DeviceConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -19,5 +20,9 @@ public interface DeviceConfigRepository extends JpaRepository<DeviceConfig, Long
     Optional<DeviceConfig> findByDeviceId(@Param("id") Long deviceId);
 
     @Query("SELECT d.lastUpdatedDate from DeviceConfig d where d.id = :id")
-    LocalDateTime findLastUpdatedDateById(@Param("id") Long deviceId);
+    Optional<LocalDateTime> findLastUpdatedDateById(@Param("id") Long deviceId);
+
+    @Modifying
+    @Query("UPDATE DeviceConfig SET lastUpdatedDate = :lastUpdatedDate WHERE id = :id")
+    void updateLastUpdatedDateById(@Param("id") Long deviceId, @Param("lastUpdatedDate") LocalDateTime lastUpdatedDate);
 }
