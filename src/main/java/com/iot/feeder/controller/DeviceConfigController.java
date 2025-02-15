@@ -18,8 +18,8 @@ public class DeviceConfigController {
     private final DeviceConfigService deviceConfigService;
 
     @GetMapping
-    public DeviceConfigDTO getDeviceConfig(@RequestParam("id") Long id, @RequestParam(value = "lastUpdatedTime", required = false) LocalDateTime lastUpdatedTime) {
-        return deviceConfigService.getDeviceConfig(id, lastUpdatedTime);
+    public DeviceConfigDTO getDeviceConfig(@RequestParam("id") Long id, @RequestParam(value = "lastUpdatedDate", required = false) LocalDateTime lastUpdatedDate) {
+        return deviceConfigService.getDeviceConfig(id, lastUpdatedDate);
     }
 
     @PostMapping
