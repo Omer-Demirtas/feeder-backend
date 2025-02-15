@@ -23,4 +23,8 @@ public class FeedingSchedule {
     private long id;
 
     private LocalTime time;
+
+    @ManyToOne
+    @JoinColumn(name = "device_config_id", nullable = false)
+    private DeviceConfig deviceConfig;
 }
