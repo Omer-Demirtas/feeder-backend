@@ -1,4 +1,4 @@
-package com.iot.feeder;
+package com.iot.feeder.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
