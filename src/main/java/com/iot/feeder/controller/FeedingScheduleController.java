@@ -1,11 +1,10 @@
-package com.iot.feeder;
+package com.iot.feeder.controller;
 
 import com.iot.feeder.dto.FeedingScheduleDTO;
 import com.iot.feeder.service.FeedingScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalTime;
 import java.util.List;
 
 /**
