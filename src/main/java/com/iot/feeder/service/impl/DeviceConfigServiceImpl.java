@@ -25,7 +25,7 @@ public class DeviceConfigServiceImpl implements DeviceConfigService {
 
     @Override
     public DeviceConfigDTO getDeviceConfig(Long deviceId, LocalDateTime lastUpdatedDate) {
-        log.info("DeviceID {} lastUpdatedTime {}", deviceId, lastUpdatedDate);
+        log.debug("DeviceID {} lastUpdatedTime {}", deviceId, lastUpdatedDate);
         // Device has same config, return null to notify there is nothing new
         if (
                 lastUpdatedDate != null &&
